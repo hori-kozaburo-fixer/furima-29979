@@ -50,6 +50,7 @@ Things you may want to cover:
 | sender_area_id   | integer    | null: false, numericality: { other_than: 1 } |
 | number_of_day_id | integer    | null: false, numericality: { other_than: 1 } |
 | money            | integer    | null:false                                   |
+| user             | references | null:false, foreign_key: true                |
 
 ###Association
 - belongs_to :user
