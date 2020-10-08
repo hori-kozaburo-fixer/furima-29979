@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :delivery_fee
   belongs_to_active_hash :sender_area
   belongs_to_active_hash :number_of_day
+  has_one_attached :image
   belongs_to :user
 
   with_options presence: true, do
