@@ -30,31 +30,31 @@ RSpec.describe Item, type: :model do
     end
 
     it 'カテゴリーの情報が必須であること' do
-      @item.category_id = "1"
+      @item.category_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Category Select")
     end
 
     it '商品の状態についての情報が必須であること' do
-      @item.status_id = "1"
+      @item.status_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Status Select")
     end
 
     it '配送料の負担についての情報が必須であること' do
-      @item.delivery_fee_id = "1"
+      @item.delivery_fee_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Delivery fee Select")
     end
 
     it '発送元の地域についての情報が必須であること' do
-      @item.sender_area_id = "1"
+      @item.sender_area_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Sender area Select")
     end
 
     it '発送までの日数についての情報が必須であること' do
-      @item.number_of_day_id = "1"
+      @item.number_of_day_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Number of day Select")
     end
@@ -66,19 +66,19 @@ RSpec.describe Item, type: :model do
     end
 
     it '価格の範囲が、¥300未満では登録できないこと' do
-      @item.money = "1"
+      @item.money = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Money Out of setting range")
     end
 
     it '価格の範囲が、¥9,999,999超では登録できないこと' do
-      @item.money = "10_000_000"
+      @item.money = 10_000_000
       @item.valid?
       expect(@item.errors.full_messages).to include("Money Out of setting range")
     end
 
     it '販売価格は半角数字のみ保存可能であること' do
-      @item.money = "１００００"
+      @item.money = '１００００'
       @item.valid?
       expect(@item.errors.full_messages).to include("Money Out of setting range")
     end
