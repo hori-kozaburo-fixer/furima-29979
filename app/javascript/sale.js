@@ -5,10 +5,9 @@ function sale () {
   Price.addEventListener("keyup", (e) => {
     console.log(Profit)
     const PriceValue = Price.value;
-    const FeeFloor = Math.floor(PriceValue/10);
-    const FeeRound = Math.round(PriceValue/10);
-    const SaleProfit = Math.floor(PriceValue-FeeRound);
-    Tax.innerHTML = `${FeeFloor}`;
+    const Fee = Math.floor(PriceValue/10);
+    const SaleProfit = Math.floor(PriceValue*9/10);
+    Tax.innerHTML = `${Fee}`;
     Profit.innerHTML = `${SaleProfit}`;
   });
 };
