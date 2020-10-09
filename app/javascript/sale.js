@@ -3,7 +3,6 @@ function sale () {
   const Tax = document.getElementById("add-tax-price");
   const Profit = document.getElementById("profit");
   Price.addEventListener("keyup", (e) => {
-    console.log(Profit)
     const PriceValue = Price.value;
     const Fee = Math.floor(PriceValue/10);
     const SaleProfit = Math.floor(PriceValue*9/10);

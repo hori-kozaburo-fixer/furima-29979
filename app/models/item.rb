@@ -12,11 +12,11 @@ class Item < ApplicationRecord
     validates :image
     validates :name
     validates :text
-    validates :money,            numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: "Out of setting range" }
-    validates :category_id,      numericality: { other_than: 1,message: "Select" }
-    validates :status_id,        numericality: { other_than: 1,message: "Select" }
-    validates :delivery_fee_id,  numericality: { other_than: 1,message: "Select" }
-    validates :sender_area_id,   numericality: { other_than: 1,message: "Select" }
-    validates :number_of_day_id, numericality: { other_than: 1,message: "Select" }
+    validates :money,            numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'Out of setting range' }
+    validates :category_id,      numericality: { other_than: 1, message: 'Select' }
+    validates :status_id,        numericality: { other_than: 1, message: 'Select' }
+    validates :delivery_fee_id,  numericality: { other_than: 1, message: 'Select' }
+    validates :sender_area_id,   numericality: { other_than: 1, message: 'Select' }
+    validates :number_of_day_id, numericality: { other_than: 1, message: 'Select' }
   end
 end
