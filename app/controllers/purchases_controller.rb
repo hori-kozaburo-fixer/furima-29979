@@ -1,10 +1,9 @@
 class PurchasesController < ApplicationController
   before_action :move_to_index
   before_action :authenticate_user!
-  before_action :set_item
+  before_action :set_item, only: [:index, :create]
 
   def index
-    set_item
     if current_user.id == @item_user.user_id
       redirect_to root_path
     else
@@ -19,7 +18,6 @@ class PurchasesController < ApplicationController
       @purchase_address.save
       redirect_to root_path
     else
-      set_item
       render 'index'
     end
   end
