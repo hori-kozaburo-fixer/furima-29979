@@ -1,9 +1,10 @@
 class PurchasesController < ApplicationController
   before_action :move_to_index
   before_action :authenticate_user!
+  before_action :set_item
 
   def index
-    @item_user = Item.find(params[:item_id])
+    set_item
     if current_user.id == @item_user.user_id
       redirect_to root_path
     else
@@ -18,7 +19,7 @@ class PurchasesController < ApplicationController
       @purchase_address.save
       redirect_to root_path
     else
-      @item_user = Item.find(params[:item_id])
+      set_item
       render 'index'
     end
   end
@@ -42,5 +43,9 @@ class PurchasesController < ApplicationController
   def move_to_index
     item_purchase = Purchase.find_by(item_id: params[:item_id])
     redirect_to root_path unless item_purchase.nil?
+  end
+
+  def set_item
+    @item_user = Item.find(params[:item_id])
   end
 end
