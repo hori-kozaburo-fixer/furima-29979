@@ -3,21 +3,22 @@ class PurchasesController < ApplicationController
   before_action :authenticate_user!
   
   def index 
-    item_user = Item.find(params[:item_id])
-    if current_user.id == item_user.user_id 
+    @item_user = Item.find(params[:item_id])
+    if current_user.id == @item_user.user_id 
       redirect_to root_path
     else
     @purchase_address = PurchaseAddress.new 
     end
   end
 
-  def create 
+  def create
     @purchase_address = PurchaseAddress.new(purchase_params)
     if @purchase_address.valid?
       pay_item
       @purchase_address.save
       return redirect_to root_path
     else
+      @item_user = Item.find(params[:item_id])
       render 'index'
     end
   end
