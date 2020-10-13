@@ -4,7 +4,7 @@ class PurchasesController < ApplicationController
   before_action :set_item, only: [:index, :create]
 
   def index
-    if current_user.id == @item_user.user_id
+    if current_user.id == @item.user_id
       redirect_to root_path
     else
       @purchase_address = PurchaseAddress.new
@@ -43,6 +43,6 @@ class PurchasesController < ApplicationController
   end
 
   def set_item
-    @item_user = Item.find(params[:item_id])
+    @item = Item.find(params[:item_id])
   end
 end
