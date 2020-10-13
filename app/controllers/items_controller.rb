@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit]
   before_action :move_to_index, only: [:edit]
   before_action :set_item, only: [:show, :edit, :update]
-  
+
   def index
     @items = Item.order('created_at DESC')
   end
@@ -21,7 +21,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    set_item
     @item.update(item_params)
     if @item.valid?
       redirect_to item_path(params[:id])
