@@ -38,6 +38,7 @@ Things you may want to cover:
 ###Association
 - has_many :items
 - has_many :purchases
+- has_many :comments
 
 #itemsテーブル
 | Column           |  Type      | Options                        |
@@ -60,6 +61,7 @@ Things you may want to cover:
 - belongs_to_active_hash :delivery_fee
 - belongs_to_active_hash :sender_area
 - belongs_to_active_hash :number_of_day
+- has_many :comments
 
 #comment
 | Column           |  Type      | Options                        |
