@@ -63,7 +63,7 @@ Things you may want to cover:
 - belongs_to_active_hash :number_of_day
 - has_many :comments
 
-#comment
+#comments
 | Column           |  Type      | Options                        |
 |------------------|------------|--------------------------------|
 | text             | text       | null: false                    |
@@ -75,7 +75,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :item
 
-#purchaseテーブル
+#purchasesテーブル
 | Column     |  Type      | Options                       |
 |------------|------------|-------------------------------|
 | user       | references | null:false, foreign_key :true |
@@ -86,7 +86,7 @@ Things you may want to cover:
 - belongs_to :item
 - has_one :address
 
-#addressテーブル
+#addressesテーブル
 | Column        |  Type      | Options                       |
 |---------------|------------|-------------------------------|
 | postal_code   | string     | null: false                   |
@@ -99,6 +99,12 @@ Things you may want to cover:
 
 ###Association
 - belongs_to :purchase
+
+### ER図
+```
+
+```
+
 
 
 
